@@ -14,7 +14,7 @@ describe DockingStation do
 
   it "return bike to docking station" do
 
-    $DEFAULT_CAPACITY.times { subject.dock_bike(Bike.new) }
+    subject.capacity.times { subject.dock_bike(Bike.new) }
     expect { subject.dock_bike(Bike.new) }.to raise_error "Docking Station full"
   end
 
