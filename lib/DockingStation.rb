@@ -1,12 +1,8 @@
 class DockingStation
 
-<<<<<<< HEAD
   $DEFAULT_CAPACITY = 20
 
   attr_reader :bikes
-=======
-  attr_reader :bike
->>>>>>> 48e3c504d1ec9528bd7f825abf0d11d1b0143ff4
 
   def initialize
     @bikes = []
