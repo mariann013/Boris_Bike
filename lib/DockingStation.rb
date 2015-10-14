@@ -1,6 +1,5 @@
 class DockingStation
 
-require_relative "bike.rb" 
 
   DEFAULT_CAPACITY = 20
   attr_reader :bikes, :capacity
@@ -17,7 +16,7 @@ require_relative "bike.rb"
 
   def dock_bike(bike)
     fail "Docking Station full" if full?
-    @bikes << bikes
+    @bikes << bike
   end
 
 end
