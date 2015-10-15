@@ -7,7 +7,7 @@ describe Bike do
   it "can be reported to be broken" do
   	bike = Bike.new
   	bike.working = false
-  	expect(bike.working).to eq false 
+  	expect(bike.working).to eq false
   end
 
 end
