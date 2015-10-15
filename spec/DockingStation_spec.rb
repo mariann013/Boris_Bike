@@ -24,7 +24,7 @@ let(:bike1) { double("bike1", :working => false) }
 
   it "Docks broken bike in broken bike array" do
     subject.dock_bike(bike1)
-    expect(subject.broken_bikes[-1]).to eq bike1
+    expect(subject.bikes[-1]).to eq bike1
   end
 
 end

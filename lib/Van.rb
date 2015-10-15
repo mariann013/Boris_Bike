@@ -6,7 +6,6 @@ class Van
   def initialize(capacity = DEFAULT_CAPACITY)
     @capacity = capacity
     @bikes = []
-    @broken_bikes = []
   end
 
   def dock_bike(bike)
@@ -19,6 +18,10 @@ class Van
     @bikes.pop
   end
 
+  def get_broken_bikes
+    broken_bikes
+  end
+
   private
 
   def full?
@@ -27,6 +30,18 @@ class Van
 
   def empty?
      @bikes.empty?
+  end
+
+  def add_to_bikes(bike)
+    @bikes << bike
+  end
+
+  def working_bikes
+    @bikes.select { | bike | bike.working? }
+  end
+
+  def broken_bikes
+    @bikes.select { | bike | !bike.working? }
   end
 
 end

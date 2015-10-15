@@ -6,4 +6,12 @@ class Bike
   	@working = status
   end
 
+  def working?
+  	@working 
+  end
+
+  def broken?
+  	!working?
+  end
+
 end
