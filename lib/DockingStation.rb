@@ -1,16 +1,19 @@
+require './lib/Bike.rb'
+
 class DockingStation
 
 
   DEFAULT_CAPACITY = 20
   attr_reader :bikes, :capacity
 
-  def initialize
+  def initialize(capacity = DEFAULT_CAPACITY)
     @bikes = []
-    @capacity = DEFAULT_CAPACITY
+    @capacity = capacity
   end
 
   def release_bike
     fail "No bikes available" if empty?
+    fail "Sorry bike is broken" if !@bikes[-1].working
     @bikes.pop
   end
 
@@ -18,8 +21,6 @@ class DockingStation
     fail "Docking Station full" if full?
     @bikes << bike
   end
-
-end
 
 private
 def empty?
@@ -30,20 +31,5 @@ private
 def full?
   @bikes.count >= capacity
 end
-
-
-class Bike
-
-  def report_broken
-    @broken = true
-  end
-
-  def broken?
-    @broken
-  end
-
-  def working?
-    @bike
-  end
 
 end
